@@ -10,42 +10,34 @@ namespace Proyecto_Integral.Models
 {
     public class Estadisticas
     {
-        private int _idEstadistica, _idSerie, _idPelicula, _recaudacion, _plataInvertida, _visualizaciones;
-        private string _paisConMasExito;
+        private int _idEstadistica, _idSerie, _idPelicula, _visualizaciones;
+        private string _paisConMasExito, _recaudacion, _presupuesto;
 
         public Estadisticas(){
 
             _idSerie = 0;
             _idPelicula = 0;
-            _recaudacion = 0;
-            _plataInvertida = 0;
+            _recaudacion = "";
+            _presupuesto = "";
             _visualizaciones = 0;
             _paisConMasExito = "";
 
 
         }
         
-        public Estadisticas(int pidPelicula, int precaudacion, int pplataInvertida, int pvisualizaciones, string ppaisConMasExito){
+        public Estadisticas(int pidPelicula, int pidSerie, string precaudacion, string ppresupuesto, int pvisualizaciones, string ppaisConMasExito){
 
             _idPelicula = pidPelicula;
+             _idSerie = pidSerie;   
             _recaudacion = precaudacion;
-            _plataInvertida = pplataInvertida;
+            _presupuesto = ppresupuesto;
             _visualizaciones = pvisualizaciones;
             _paisConMasExito = ppaisConMasExito;
 
 
         }
 
-          public Estadisticas(string ppaisConMasExito, int precaudacion, int pidSerie, int pplataInvertida, int pvisualizaciones){
 
-            _recaudacion = precaudacion;
-            _idSerie = pidSerie;   
-            _plataInvertida = pplataInvertida;
-            _visualizaciones = pvisualizaciones;
-            _paisConMasExito = ppaisConMasExito;
-
-
-        }
 
 
         public int IdSerie{
@@ -61,13 +53,13 @@ namespace Proyecto_Integral.Models
             get{return _idEstadistica;}
             set{_idEstadistica = value;}
         }
-         public int Recaudacion{
+         public string Recaudacion{
             get{return _recaudacion;}
             set{_recaudacion = value;}
         }
-         public int PlataInvertida{
-            get{return _plataInvertida;}
-            set{_plataInvertida = value;}
+         public string Presupuesto{
+            get{return _presupuesto;}
+            set{_presupuesto = value;}
         }
          public int Visualizaciones{
             get{return _visualizaciones;}

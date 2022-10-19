@@ -25,18 +25,9 @@ namespace Proyecto_Integral.Models
             _fecha = new DateTime();
         }
 
-        public Reseñas(int pidPelicula, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha){
+        public Reseñas(int pidPelicula, int pidSerie, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha){
 
             _idPelicula = pidPelicula;
-            _contenido = pcontenido;
-            _valoracion = pvaloracion;
-            _nombreUsuario = pnombreUsuario;
-            _fecha = pfecha;
-
-        }
-
-          public Reseñas( string pcontenido, int pidSerie, float pvaloracion, string pnombreUsuario, DateTime pfecha){
-
             _idSerie = pidSerie;
             _contenido = pcontenido;
             _valoracion = pvaloracion;
@@ -44,6 +35,8 @@ namespace Proyecto_Integral.Models
             _fecha = pfecha;
 
         }
+
+        
 
 
         public int IdReseña{

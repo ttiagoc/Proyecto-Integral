@@ -44,7 +44,17 @@ namespace Proyecto_Integral.Models
 
             }
 
+               public static Peliculas PeliculaMasExitosa(){
 
+                Peliculas peliculaExitosa;
+              
+                string sql = "select top 1 Peliculas.* from Estadisticas inner join  Peliculas on Estadisticas.IdPelicula = Peliculas.IdPelicula order by Visualizaciones desc";
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                      
+                      peliculaExitosa = db.QueryFirstOrDefault<Peliculas>(sql);
+                    }
+                    return peliculaExitosa;
+            }
 
 
 

@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+ 
 }
 
 @media (min-width: 768px) {
@@ -15,5 +16,31 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url("/Imagenes/fondo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
 }
 
+.titulo{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sinopsis{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+p, h1{
+  color: white;
+}
+
+nav{
+  background-image: url("/Imagenes/fondo.png");
+}
+
+.sombra{
+  box-shadow: 0px 5px 50px black;
+}

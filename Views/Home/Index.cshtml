@@ -1,5 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    <div class="container pt-5">
+        <img src="@ViewBag.PeliExito.Foto" class="sombra" height="520px" width="auto" class="pt-5">
+        <h1 class="p-5 titulo ">@ViewBag.PeliExito.Nombre</h1>
+        
+        <p class="p-5 sinopsis">@ViewBag.PeliExito.Sinopsis</p>
+        
+   </div>
 }
 
 
