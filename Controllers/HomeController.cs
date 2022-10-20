@@ -40,11 +40,24 @@ public class HomeController : Controller
 
        public IActionResult VerInfoPeliculas(int id)
     {
-      //  ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
+      // ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
 
         return View("DetallePeliculas");
     }
 
+     public IActionResult VerSeries()
+    {
+        ViewBag.Series = BD.ListarSeries();
+
+        return View("Series");
+    }
+
+     public IActionResult VerInfoSeries(int id)
+    {
+      // ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
+
+        return View("DetalleSeries");
+    }
 
 
 }

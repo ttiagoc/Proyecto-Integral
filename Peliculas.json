@@ -1,0 +1,72 @@
+{"Peliculas":[{
+    "Title": "Guardians of the Galaxy Vol. 2",
+    "Year": "2017",
+    "Rated": "PG-13",
+    "Released": "05 May 2017",
+    "Runtime": "136 min",
+    "Genre": "Action, Adventure, Comedy",
+    "Director": "James Gunn",
+    "Writer": "James Gunn, Dan Abnett, Andy Lanning",
+    "Actors": "Chris Pratt, Zoe Saldana, Dave Bautista",
+    "Plot": "The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Oscar. 15 wins & 59 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+	},
+	{
+
+        "Title": "Cars",
+        "Year": "2006",
+        "Rated": "G",
+        "Released": "09 Jun 2006",
+        "Runtime": "117 min",
+        "Genre": "Animation, Adventure, Comedy",
+        "Director": "John Lasseter, Joe Ranft",
+        "Writer": "John Lasseter, Joe Ranft, Jorgen Klubien",
+        "Actors": "Owen Wilson, Bonnie Hunt, Paul Newman",
+        "Plot": "On the way to the biggest race of his life, a hotshot rookie race car gets stranded in a rundown town, and learns that winning isn't everything in life.",
+        "Language": "English, Italian, Japanese, Yiddish",
+        "Country": "United States",
+        "Awards": "Nominated for 2 Oscars. 28 wins & 34 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTg5NzY0MzA2MV5BMl5BanBnXkFtZTYwNDc3NTc2._V1_SX300.jpg",
+        "Type":"movies"
+       
+
+    },
+    {
+    
+        "Title":"The ABC Murders",
+        "Year":"2018","Rated":"TV-14",
+        "Released":"01 Feb 2019",
+        "Runtime":"2 min",
+        "Genre":"Crime, Drama, Mystery",
+        "Director":"N/A","Writer":"N/A",
+        "Actors":"John Malkovich, Eamon Farren, Michael Shaeffer",
+        "Plot":"In 1933, retired detective Hercule Poirot is targeted by a taunting killer who sends letters signed \"ABC\", which Poirot must decode in order to discover the identity of the murderer.","Language":"English","Country":"United Kingdom","Awards":"3 nominations",
+        "Poster":"https://m.media-amazon.com/images/M/MV5BYmJmNzU0NTgtOGM5Ni00MWJiLTgwZmMtNDIyNjYzZDAzNzI5XkEyXkFqcGdeQXVyMjExMjk0ODk@._V1_SX300.jpg",
+        "Type":"series",
+        "totalSeasons":"1"
+
+
+    },
+    {
+        "Title":"The Shawshank Redemption",
+        "Year":"1994",
+        "Rated":"R",
+        "Released":"14 Oct 1994",
+        "Runtime":"142 min",
+        "Genre":"Drama",
+        "Director":"Frank Darabont",
+        "Writer":"Stephen King, Frank Darabont",
+        "Actors":"Tim Robbins, Morgan Freeman, Bob Gunton",
+        "Plot":"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "Language":"English",
+        "Country":"United States",
+        "Awards":"Nominated for 7 Oscars. 21 wins & 43 nominations total",
+        "Poster":"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+    }
+
+
+	]
+}

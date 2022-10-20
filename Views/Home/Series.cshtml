@@ -1,0 +1,21 @@
+
+<div class="container m-auto">
+   <div class="row">
+    @foreach (Series serie in @ViewBag.Series)
+    {
+
+     <div class="col pt-5">
+       <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
+            <a href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' ><img class="card-img-top transparencia" src="@serie.Foto" alt="Card image cap"  height="400" width="auto"></a> 
+          <div class="card-body">
+            
+          
+            <a class="sd h4 nomCards" href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' > @serie.Nombre </a>
+        
+          </div>
+        </div>
+     </div>
+       
+    }  
+   </div>
+  </div>
