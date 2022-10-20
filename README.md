@@ -10,3 +10,5 @@ Base de datos:
 - EstadisticasPelicula (idestadistica, recaudacion,idpelicula,plataInvertida,visualizaciones,paisconmasexito) 
 -generos(idgenero, nombre)
 -series(nombre, descripcion, idserie, temporadas, capitulosTotales, idgenero, actorprincipal, fechaestreno)
+
+https://similaranswer.es/hay-alguna-api-para-peliculas/

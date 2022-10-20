@@ -26,11 +26,17 @@ body {
 .titulo{
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  padding-left: 15px;
 }
 
 .sinopsis{
-  display: inline-block;
+  display:inline-block;
+  position: absolute;
   vertical-align: middle;
+  text-align: left;
+
+
 }
 
 p, h1{
@@ -43,4 +49,9 @@ nav{
 
 .sombra{
   box-shadow: 0px 5px 50px black;
+}
+
+.contenedor{
+  height: 525px ;
+
 }

@@ -2,10 +2,11 @@
     ViewData["Title"] = "Home Page";
 
     <div class="container pt-5">
+        <div class="contenedor border">
         <img src="@ViewBag.PeliExito.Foto" class="sombra" height="520px" width="auto" class="pt-5">
-        <h1 class="p-5 titulo ">@ViewBag.PeliExito.Nombre</h1>
-        
-        <p class="p-5 sinopsis">@ViewBag.PeliExito.Sinopsis</p>
+        <h1 class="titulo ">@ViewBag.PeliExito.Nombre</h1>
+        <p class="pt-5 sinopsis">@ViewBag.PeliExito.Sinopsis</p>   
+        </div>  
         
    </div>
 }
