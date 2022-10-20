@@ -12,3 +12,6 @@ Base de datos:
 -series(nombre, descripcion, idserie, temporadas, capitulosTotales, idgenero, actorprincipal, fechaestreno)
 
 https://similaranswer.es/hay-alguna-api-para-peliculas/
+
+
+http://www.omdbapi.com/?apikey=[f39dc9e5]&

@@ -24,8 +24,8 @@ namespace Proyecto_Integral.Models
 
         }
 
-        public Peliculas(int pidGenero, string pdirector, string pnombre, string pprotagonista, string psinopsis, string pfoto, DateTime pfechaEstreno){
-
+        public Peliculas( int pidGenero, string pdirector, string pnombre, string pprotagonista, string psinopsis, string pfoto, DateTime pfechaEstreno){
+            
             _idGenero = pidGenero;
             _director = pdirector;
             _nombre = pnombre;

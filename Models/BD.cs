@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-      //  private static string server = Dns.GetHostName();
-        //private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+       private static string server = Dns.GetHostName();
+        private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-                  DataBase=TpFinal;Trusted_Connection=True;";
+           // private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+             //     DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -61,8 +61,7 @@ namespace Proyecto_Integral.Models
                     return peliculaExitosa;
             }
 
-
-
+           
 
 
 

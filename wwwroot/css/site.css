@@ -55,3 +55,21 @@ nav{
   height: 525px ;
 
 }
+
+
+.sd{
+  text-decoration: none;
+}
+
+.nomCards{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
+
+.informacion{
+  width: 600px;
+  height: auto;
+  max-width: 100%;
+}

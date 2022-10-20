@@ -30,4 +30,21 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+     public IActionResult VerPeliculas()
+    {
+        ViewBag.Peliculas = BD.ListarPeliculas();
+
+        return View("Peliculas");
+    }
+
+       public IActionResult VerInfoPeliculas(int id)
+    {
+      //  ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
+
+        return View("DetallePeliculas");
+    }
+
+
+
 }
