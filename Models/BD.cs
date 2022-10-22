@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-       private static string server = Dns.GetHostName();
-        private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+    //   private static string server = Dns.GetHostName();
+       // private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-           // private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-             //     DataBase=TpFinal;Trusted_Connection=True;";
+            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+                 DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -61,9 +61,33 @@ namespace Proyecto_Integral.Models
                     return peliculaExitosa;
             }
 
+               public static List<Peliculas> ObtenerPelisMasRecientes(){
+
+                  List <Peliculas> ListaPeliculasRecientes = new List<Peliculas>();
+
+                   string SQL = "SELECT top 3 * FROM Peliculas order by FechaEstreno";
+                   using(SqlConnection db = new SqlConnection(_connectionString)){
+                   ListaPeliculasRecientes = db.Query<Peliculas>(SQL).ToList();
+            }
+
+               return ListaPeliculasRecientes;
+                  
+               }
            
+            public static List<Peliculas> BusquedaPersonalizada(string busc){
 
+                  List <Peliculas> ListaResultados = new List<Peliculas>();
 
+                  
+                   string SQL = "SELECT * FROM Peliculas where Nombre like '" + busc + "%'";
+                   using(SqlConnection db = new SqlConnection(_connectionString)){
+                   ListaResultados = db.Query<Peliculas>(SQL).ToList();
+                   }
+            
 
-    }
+               return ListaResultados;
+
+                   }
+
+            }
 }

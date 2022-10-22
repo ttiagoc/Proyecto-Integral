@@ -1,14 +1,69 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-
-    <div class="container pt-5">
-        <div class="contenedor border">
-        <img src="@ViewBag.PeliExito.Foto" class="sombra" height="520px" width="auto" class="pt-5">
-        <h1 class="titulo ">@ViewBag.PeliExito.Nombre</h1>  @*hacer grid*@
-        <p class="pt-5 sinopsis">@ViewBag.PeliExito.Sinopsis</p>   
-        </div>  
-        
-   </div>
+    ViewData["Title"] = "Home";
 }
 
+    <center>
+    <img src="/Imagenes/Logo.png" height="300px" width="auto">
+    </center>
+    <h1 class="text-center pb-5 titulos h1 pt-2">Bienvenido a Papio Reviews</h1>
 
+
+    <div id="carouselExampleControls" class="carousel slide vertical" data-ride="carousel">
+  <div class="carousel-inner">
+    @foreach (Peliculas peli in @ViewBag.PelisRecientes)
+    {
+          <div class="carousel-item active">
+      <img class="d-block w-150 h-200" src="@peli.Foto"  height="200px" width="200px" alt="First slide">
+    </div>
+    }
+  
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+    <div class="container pt-5">
+      <div class="row">
+         <div class="col-4"> <img src="@ViewBag.PeliExito.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
+         <div class="col"><h1 class="">@ViewBag.PeliExito.Nombre</h1><p class="pt-2">@ViewBag.PeliExito.Sinopsis</p> </div>
+         
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+@*
+
+        <div class="col">
+        <img src="@ViewBag.PeliExito.Foto" class="sombra" height="520px" width="auto" class="pt-5">
+        </div>
+        <div class="col"">
+            <div class="row">
+        <h1 class="titulo">@ViewBag.PeliExito.Nombre</h1>  @*hacer grid
+          </div>
+          <div class="row">
+        <p class="pt-5 sinopsis">@ViewBag.PeliExito.Sinopsis</p>   
+            </div>
+        </div>
+
+        *@
+      
+        
+ 

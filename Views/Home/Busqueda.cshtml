@@ -1,0 +1,31 @@
+
+@{
+    ViewData["Title"] = "Busqueda";
+}
+
+
+@if (@ViewBag.Resultados != null)
+{
+  <div class="container m-auto">
+   <div class="row">
+    @foreach (Peliculas pelis in @ViewBag.Resultados)
+    {
+
+     <div class="col pt-5">
+       <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
+            <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' ><img class="card-img-top transparencia" src="@pelis.Foto" alt="Card image cap"  height="400" width="auto"></a> 
+          <div class="card-body">
+            
+          
+            <a class="sd h4 nomCards" href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' > @pelis.Nombre </a>
+        
+          </div>
+        </div>
+     </div>
+       
+    }  
+   </div>
+  </div>
+}else{
+    <h1 class="text-center pt-5 pb-5">Lo siento, no hay resultados para tu búsqueda</h1>
+}

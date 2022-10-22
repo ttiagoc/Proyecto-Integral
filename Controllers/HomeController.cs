@@ -16,6 +16,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag.PeliExito = BD.PeliculaMasExitosa();
+        ViewBag.PelisRecientes = BD.ObtenerPelisMasRecientes();
 
         return View();
     }
@@ -57,6 +58,14 @@ public class HomeController : Controller
       // ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
 
         return View("DetalleSeries");
+    }
+
+    public IActionResult HacerBusqueda(string busc){
+
+        ViewBag.Resultados = BD.BusquedaPersonalizada(busc);
+        Console.WriteLine(busc);
+       
+        return View("Busqueda");
     }
 
 

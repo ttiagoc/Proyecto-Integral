@@ -73,3 +73,17 @@ nav{
   height: auto;
   max-width: 100%;
 }
+
+@font-face {
+  font-family: fuente;
+  src: url('/fuente.ttf') format('truetype');
+}
+
+.titulos{
+  font-family: fuente;
+  font-size: 42px;
+}
+
+
+
+
