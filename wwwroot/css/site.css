@@ -84,6 +84,26 @@ nav{
   font-size: 42px;
 }
 
+.blanco{
+  color: white;
+}
 
 
+@font-face {
+  font-family: fuente2;
+  src: url('/fuente2.ttf') format('truetype');
+}
 
+h3{
+  font-family: fuente2;
+}
+
+@font-face {
+  font-family: fuente3;
+  src: url('/fuente3.otf') format('truetype');
+}
+
+p{
+  font-family: fuente3;
+  font-size: 18px;
+}

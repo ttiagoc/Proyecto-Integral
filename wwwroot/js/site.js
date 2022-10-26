@@ -4,3 +4,17 @@
 // Write your JavaScript code.
 
 
+$.ajax({
+    url: '/Home/Filtros',
+    data: $('#boton').serialize(),
+    type:'POST',    
+    dataType:'JSON',            
+    success:
+        function (respC){                      
+           console.log('mee');
+        },
+    error:
+        function(){
+            console.log('error');
+        }
+    });

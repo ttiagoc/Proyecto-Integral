@@ -28,33 +28,29 @@
                             <a class="nav-link "  href='@Url.Action("VerSeries", "Home")' style="color:white">Series</a>
                         </li>
 
-                        <li>
-                            <div class="dropdown">
-                            <a href="#" class="dropdown-toggle nav-link " data-bs-toggle="dropdown" style="text-decoration:none; color:white">Generos</a>
-                             <div class="dropdown-menu">
-                               <a href="#" class="dropdown-item ">Terror</a>
-                              <a href="#" class="dropdown-item">Acción</a>
-                               <a href="#" class="dropdown-item">Comedia</a>
-                                <a href="#" class="dropdown-item">Suspenso</a>
-                                 <a href="#" class="dropdown-item">Drama</a>
-                                  <a href="#" class="dropdown-item">Fantasía</a>
-                                  
-
-                             </div>
-                        </div>
-
-                        </li>
+                    
 
                         
 
 
 
                     </ul>
-
+                <div class="search">
                     <form method="post" Action='@Url.Action("HacerBusqueda", "Home")'>
-                     <input class="form-control" type="text" name="busc" placeholder="Realize una busqueda" >
-                     <input class="btn btn-primary" value="Buscar"  type="submit">Search</button>
+                     <input class="form-control" type="text"  name="busc" placeholder="Realice una busqueda" >
+                     <input class="btn btn-primary" value="Buscar"   type="submit">
                          </form>
+
+
+        </div>
+ 
+
+
+
+
+
+
+
                 </div>
             </div>
         </nav>

@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-    //   private static string server = Dns.GetHostName();
-       // private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+      private static string server = Dns.GetHostName();
+       private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-                 DataBase=TpFinal;Trusted_Connection=True;";
+           // private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+             //    DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -88,6 +88,36 @@ namespace Proyecto_Integral.Models
                return ListaResultados;
 
                    }
+
+               
+              public static Peliculas ObtenerInfoPeliculas(int IdPelicula){
+              Peliculas miPelicula;
+                string SQL = "SELECT * FROM Peliculas WHERE IdPelicula = @pIdPelicula";
+              using(SqlConnection db = new SqlConnection(_connectionString)){
+                miPelicula = db.QueryFirstOrDefault<Peliculas>(SQL, new{pIdPelicula = IdPelicula});
+            }
+            return miPelicula;
+        }
+
+            public static List<Peliculas> ObtenerPeliculaPorGenero(int genero){
+
+                List <Peliculas> _ListaPeliGenero = new List<Peliculas>();
+             using(SqlConnection db = new SqlConnection(_connectionString))
+             {
+                string sql = "SELECT * FROM Peliculas where idGenero = " + genero ;
+                _ListaPeliGenero = db.Query<Peliculas>(sql).ToList();
+             }
+
+               return _ListaPeliGenero;
+
+
+
+
+
+            }
+         
+
+
 
             }
 }

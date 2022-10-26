@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Net.WebSockets;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Integral.Models;
 
@@ -17,6 +18,16 @@ public class HomeController : Controller
     {
         ViewBag.PeliExito = BD.PeliculaMasExitosa();
         ViewBag.PelisRecientes = BD.ObtenerPelisMasRecientes();
+
+         List <Peliculas> TodasPelis = new List<Peliculas>();
+         TodasPelis = BD.ListarPeliculas();
+
+         int cantPelis = TodasPelis.Count();
+
+         Random random = new Random();
+        int num = random.Next(0,cantPelis);
+        
+         ViewBag.PeliRandom = TodasPelis[num];
 
         return View();
     }
@@ -39,9 +50,11 @@ public class HomeController : Controller
         return View("Peliculas");
     }
 
-       public IActionResult VerInfoPeliculas(int id)
+       public IActionResult VerInfoPeliculas(int IdPelicula)
     {
-      // ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
+         ViewBag.InfoPelicula = BD.ObtenerInfoPeliculas(IdPelicula);
+
+     
 
         return View("DetallePeliculas");
     }
