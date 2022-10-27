@@ -76,10 +76,35 @@ public class HomeController : Controller
     public IActionResult HacerBusqueda(string busc){
 
         ViewBag.Resultados = BD.BusquedaPersonalizada(busc);
-        Console.WriteLine(busc);
+       
        
         return View("Busqueda");
     }
 
+    public Peliculas PeliculaRandom(){
+
+        List <Peliculas> TodasPelis = new List<Peliculas>();
+         TodasPelis = BD.ListarPeliculas();
+
+         int cantPelis = TodasPelis.Count();
+       //HACER BD QUE TRAIGA LA RANDOM
+         Random random = new Random();
+        int num = random.Next(0,cantPelis);
+        
+            
+            return TodasPelis[num];
+    }
+
+
+
+
+    public List<Peliculas> PelisGenero(int num){
+
+        List <Peliculas> ListaPorGenero = new List<Peliculas>();
+        ListaPorGenero = BD.ObtenerPeliculaPorGenero(num);
+        
+            
+            return ListaPorGenero;
+    }
 
 }

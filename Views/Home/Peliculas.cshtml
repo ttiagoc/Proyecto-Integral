@@ -1,5 +1,5 @@
 
-    <form  method="post" id="boton">
+    <form  method="post" id="formGeneros" action="javascript:FiltrarGeneros()" >
           <select class="" required name="id">
                       <option selected disabled value="" hidden>Filtrar</option>     
                       <option value = "1">Terror</option>
@@ -11,12 +11,13 @@
                       <option value = "7">Infantil</option>
                       <option value = "8">Aventura</option>
                       <option value = "10">Crimen</option>
+                      <option value = "11">Ciencia Ficción</option>
                   
         </select>
-         <input class="btn btn-primary" value="Aplicar" type="submit">
+         <input class="btn-sm btn-primary" value="Aplicar" type="submit">
       </form>
 
-<div class="container m-auto">
+<div class="container m-auto" id="Todas">
    <div class="row">
     @foreach (Peliculas pelis in @ViewBag.Peliculas)
     {
@@ -24,11 +25,11 @@
   
      <div class="col pt-5">
        <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
-            <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' ><img class="card-img-top transparencia" src="@pelis.Foto" alt="Card image cap"  height="350px" width="auto"></a> 
+            <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' id="Todas" ><img id="Todas" class="card-img-top transparencia" src="@pelis.Foto" alt="Card image cap"  height="350px" width="auto"></a> 
           <div class="card-body">
             
           
-            <a class="sd h4 nomCards" href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' > @pelis.Nombre </a>
+            <a id="Todas" class="sd h4 nomCards" href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' > @pelis.Nombre </a>
         
           </div>
         </div>
@@ -37,3 +38,5 @@
     }  
    </div>
   </div>
+
+  <div class="" id="Filtrada"></div>
