@@ -1,20 +1,26 @@
 
     <form  method="post" id="formGeneros" action="javascript:FiltrarGeneros()" >
-          <select class="" required name="id" name="id">
+          <select class="" required>
                       <option selected disabled value="" hidden>Filtrar</option>     
-                      <option value = "1">Terror</option>
-                      <option value = "2">Acción</option>
-                      <option value = "3">Comedia</option>
-                      <option value = "4">Suspenso</option>
-                      <option value = "5">Drama</option>
-                      <option value = "6">Fantasía</option>
-                      <option value = "7">Infantil</option>
-                      <option value = "8">Aventura</option>
-                      <option value = "10">Crimen</option>
-                      <option value = "11">Ciencia Ficción</option>
+                      <option value = "1" class="opcion" >Terror</option>
+                      <option value = "2" class="opcion">Acción</option>
+                      <option value = "3" class="opcion">Comedia</option>
+                      <option value = "4" class="opcion">Suspenso</option>
+                      <option value = "5" class="opcion">Drama</option>
+                      <option value = "6" class="opcion">Fantasía</option>
+                      <option value = "7" class="opcion">Infantil</option>
+                      <option value = "8" class="opcion">Aventura</option>
+                      <option value = "10" class="opcion">Crimen</option>
+                      <option value = "11" class="opcion">Ciencia Ficción</option>
+                      @*
+                       @foreach (Generos gen in @ViewBag.Generos)
+                      {
+                         <option value="@gen.IdGenero">@gen.Genero</option>
+                      }
+                      *@
                   
         </select>
-         <input class="btn-sm btn-primary" value="Aplicar" type="submit">
+         <input class="btn-sm btn-primary" value="Aplicar" id="formGeneros" type="submit">
       </form>
 
 <div class="container m-auto" id="Todas">
@@ -39,4 +45,9 @@
    </div>
   </div>
 
+  <div class="container m-auto" id="">
+   <div class="row">
   <div class="" id="Filtrada"></div>
+
+     </div>
+  </div>

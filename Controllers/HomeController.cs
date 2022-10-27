@@ -46,7 +46,8 @@ public class HomeController : Controller
      public IActionResult VerPeliculas()
     {
         ViewBag.Peliculas = BD.ListarPeliculas();
-
+        ViewBag.Generos = BD.ObtenerGeneros();
+        
         return View("Peliculas");
     }
 
@@ -91,7 +92,7 @@ public class HomeController : Controller
          Random random = new Random();
         int num = random.Next(0,cantPelis);
         
-            
+            System.Console.WriteLine(num);
             return TodasPelis[num];
     }
 
@@ -99,11 +100,16 @@ public class HomeController : Controller
 
 
     public List<Peliculas> PelisGenero(int num){
-
+        
         List <Peliculas> ListaPorGenero = new List<Peliculas>();
         ListaPorGenero = BD.ObtenerPeliculaPorGenero(num);
         
-            
+        foreach (Peliculas pel in ListaPorGenero)
+        {
+            System.Console.WriteLine(pel.Nombre);
+            System.Console.WriteLine(1);
+        }
+           // System.Console.WriteLine(1);
             return ListaPorGenero;
     }
 

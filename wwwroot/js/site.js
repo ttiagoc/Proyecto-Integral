@@ -27,20 +27,32 @@ function CambiarFoto(){
 
 function FiltrarGeneros(){
 
+      const opciones = document.querySelectorAll('.opcion');
+      var a;
+      opciones.forEach((e)=>{
+        if (e.selected) {
+           a = e.value;
+          
+        }
+      });
+
+
+
     $.ajax({
       url: '/Home/PelisGenero',   
       type:'POST',    
       dataType:'JSON', 
-      data: $('#formGeneros').serialize(),           
+      data:  {num:a},           
         success:
-          function (resp){                      
+          function (resp){  
+              console.log(a);           
               $('#Todas').hide();
               $('#Filtrada').html('');
               console.log(resp);
 
               resp.forEach(val => {
-              $('#Filtrada').append('<img src="' + val.foto +'"></img>'); 
-              $('#Filtrada').append('<h1>HOLAA</h1>'); 
+              $('#Filtrada').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4" style="width: 18rem;"><img id="Todas" class="card-img-top transparencia" src="' + val.foto +' " height="200px" width="auto"></img>' + val.Nombre); 
+             
              
             });
         },

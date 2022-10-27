@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-      private static string server = Dns.GetHostName();
-       private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+    //private static string server = Dns.GetHostName();
+     //  private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-           // private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-             //    DataBase=TpFinal;Trusted_Connection=True;";
+            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+                 DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -109,23 +109,33 @@ namespace Proyecto_Integral.Models
         }
 
             public static List<Peliculas> ObtenerPeliculaPorGenero(int genero){
-
+                  
                 List <Peliculas> _ListaPeliGenero = new List<Peliculas>();
+                   string sql = "SELECT * FROM Peliculas where IdGenero = @b";
              using(SqlConnection db = new SqlConnection(_connectionString))
              {
-                string sql = "SELECT * FROM Peliculas where idGenero = " + genero ;
-                _ListaPeliGenero = db.Query<Peliculas>(sql).ToList();
+                _ListaPeliGenero = db.Query<Peliculas>(sql,new{b = genero}).ToList();
              }
-
+               System.Console.WriteLine(genero);
                return _ListaPeliGenero;
-
-
-
 
 
             }
          
+            public static List<Generos> ObtenerGeneros(){
 
+                List <Generos> _ListaGeneros = new List<Generos>();
+             using(SqlConnection db = new SqlConnection(_connectionString))
+             {
+                string sql = "SELECT * FROM Generos";
+                _ListaGeneros = db.Query<Generos>(sql).ToList();
+             }
+
+               return _ListaGeneros;
+
+
+
+            }
 
 
             }
