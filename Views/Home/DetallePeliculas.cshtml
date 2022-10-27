@@ -1,12 +1,38 @@
 
 
-  <div class="container informacion">
-  @*
-      <div class="text-center">
-        <img class="saturado zoom" src='@ViewBag.InfoPelicula.Foto'  width="auto" height="160px"> 
+
+    <div class="container pt-5">
+      <div class="row">
+         <div class="col-4"> <img src="@ViewBag.InfoPelicula.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
+         <div class="col-4" >
+            <h1 class="">@ViewBag.InfoPelicula.Nombre</h1>
+            <p class="pt-3 blanco">@ViewBag.InfoPelicula.Sinopsis</p> 
+            <hr style="height:2px;border-width:0;color:gray;background-color:white">
+            <p class="pt-1 blanco">Dirigida por:  @ViewBag.InfoPelicula.Director</p>
+             <p class="blanco">Personaje principal:  @ViewBag.InfoPelicula.Protagonista</p>
+             <p class="blanco">Fecha de estreno:  @ViewBag.InfoPelicula.FechaEstreno</p>
+              
+              <button type="button" id="myBtn">Más información</button>
+         </div>
+         
       </div>
-   *@
-        <h1 class="marroncito text-center display-1">@ViewBag.InfoPelicula.Nombre</h1>
-        <h2 class="marroncito text-center">Continente: @ViewBag.InfoPelicula.Director</h2>
-        <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoPelicula.PersonajePrincipal</h2>
-  </div>
+    </div>
+     
+
+     <div id="myModal" class="modal">
+
+      <div class="modal-content">
+       <div class="modal-header">
+        
+         
+           <h2 class="text-center">Estadisticas</h2>
+            <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+          <p class="">Recaudación:  @ViewBag.EstadisticaPelicula.Recaudacion</p>
+           <p class="">Plata invertida:  @ViewBag.EstadisticaPelicula.Presupuesto</p>
+            <p class="">Visualizaciones:  @ViewBag.EstadisticaPelicula.Visualizaciones</p>
+             <p class="">Pais con más éxito:  @ViewBag.EstadisticaPelicula.PaisConMasExito</p>
+       </div>
+       
+      </div>

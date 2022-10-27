@@ -92,11 +92,20 @@ namespace Proyecto_Integral.Models
                
               public static Peliculas ObtenerInfoPeliculas(int IdPelicula){
               Peliculas miPelicula;
-                string SQL = "SELECT * FROM Peliculas WHERE IdPelicula = @pIdPelicula";
+                string SQL = "SELECT * FROM Peliculas WHERE IdPelicula = @a";
               using(SqlConnection db = new SqlConnection(_connectionString)){
-                miPelicula = db.QueryFirstOrDefault<Peliculas>(SQL, new{pIdPelicula = IdPelicula});
+                miPelicula = db.QueryFirstOrDefault<Peliculas>(SQL, new{a = IdPelicula});
             }
             return miPelicula;
+        }
+
+          public static Estadisticas ObtenerEstadisticasPeliculas(int IdPelicula){
+              Estadisticas miEstadistica;
+                string SQL = "SELECT * FROM Estadisticas WHERE IdPelicula = @a";
+              using(SqlConnection db = new SqlConnection(_connectionString)){
+                miEstadistica = db.QueryFirstOrDefault<Estadisticas>(SQL, new{a = IdPelicula});
+            }
+            return miEstadistica;
         }
 
             public static List<Peliculas> ObtenerPeliculaPorGenero(int genero){

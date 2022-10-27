@@ -21,3 +21,9 @@ https://web.postman.co/workspace/My-Workspace~2c02c55b-9180-493c-8b85-879f806b37
 https://omdbapi.com/
 
 https://blog.devgenius.io/fetch-data-from-a-real-api-react-js-f962da8af24a
+
+https://letterboxd.com/film/smile-2022/
+
+
+
+https://www.w3schools.com/howto/howto_css_modals.asp

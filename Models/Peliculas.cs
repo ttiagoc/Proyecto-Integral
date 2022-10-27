@@ -77,6 +77,11 @@ namespace Proyecto_Integral.Models
             set{_director = value;}
         }
 
+        public DateTime FechaEstreno{
+            get{return _fechaEstreno;}
+            set{_fechaEstreno = value;}
+        }
+
 
     }
 }

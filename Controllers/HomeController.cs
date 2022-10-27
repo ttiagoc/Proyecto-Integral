@@ -53,7 +53,7 @@ public class HomeController : Controller
        public IActionResult VerInfoPeliculas(int IdPelicula)
     {
          ViewBag.InfoPelicula = BD.ObtenerInfoPeliculas(IdPelicula);
-
+         ViewBag.EstadisticaPelicula = BD.ObtenerEstadisticasPeliculas(IdPelicula);
      
 
         return View("DetallePeliculas");
