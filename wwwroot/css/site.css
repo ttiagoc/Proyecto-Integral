@@ -155,3 +155,48 @@ p{
 .modal-header{
   text-align: center;
 }
+
+
+
+
+
+select {
+  background: white;
+  border: none;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 125px;
+}
+
+.inp{
+  height: 33px;
+  color:white;
+  background-color:indigo ;
+  
+}
+
+.cont{
+  float: right;
+}
+
+option,select,.inp{
+  font-family:cursive;
+  border-radius: 7px;
+}
+
+.busqueda{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+

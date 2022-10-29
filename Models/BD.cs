@@ -111,12 +111,23 @@ namespace Proyecto_Integral.Models
             public static List<Peliculas> ObtenerPeliculaPorGenero(int genero){
                   
                 List <Peliculas> _ListaPeliGenero = new List<Peliculas>();
-                   string sql = "SELECT * FROM Peliculas where IdGenero = @b";
-             using(SqlConnection db = new SqlConnection(_connectionString))
-             {
-                _ListaPeliGenero = db.Query<Peliculas>(sql,new{b = genero}).ToList();
+                string sql;
+                if(genero != 0)
+                {
+                     sql = "SELECT * FROM Peliculas where IdGenero = @b";
+                     using(SqlConnection db = new SqlConnection(_connectionString))
+                      {
+                         _ListaPeliGenero = db.Query<Peliculas>(sql,new{b = genero}).ToList();
+                      }
+                }else{
+                     sql = "SELECT * FROM Peliculas";
+                     using(SqlConnection db = new SqlConnection(_connectionString))
+                     {
+                       _ListaPeliGenero = db.Query<Peliculas>(sql).ToList();
+                      }
              }
-               System.Console.WriteLine(genero);
+               
+            
                return _ListaPeliGenero;
 
 

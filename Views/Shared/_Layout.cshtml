@@ -34,25 +34,25 @@
                         </li>
 
                     
-
+                 
                         
 
 
 
                     </ul>
-                <div class="search">
-                    <form method="post" Action='@Url.Action("HacerBusqueda", "Home")'>
+
+@*                   
+                    <form method="get" Action='@Url.Action("HacerBusqueda", "Home")'>
                      <input class="form-control" type="text"  name="busc" placeholder="Realice una busqueda" >
-                     <input class="btn btn-primary" value="Buscar"   type="submit">
-                         </form>
+                     <input class="btn btn-primary busqueda" value="Buscar"   type="submit">
+                         </form> *@
 
 
-        </div>
- 
-
-
-
-
+                         <form method="get" Action='@Url.Action("HacerBusqueda", "Home")'>
+                            
+                             <input id="" type="text" name="busc" placeholder="Realice una búsqueda..." required  style="border-radius:3px ;"/>
+                           <button type="submit" class="btn-sm btn-primary" style="border-radius:3px ;">Buscar</button>    
+                          </form>
 
 
 
