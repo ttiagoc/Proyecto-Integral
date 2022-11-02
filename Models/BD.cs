@@ -166,7 +166,15 @@ namespace Proyecto_Integral.Models
             return miEstadistica;
         }
 
+            public static void AgregarReseña(Reseñas Res){
 
+              string SQL = "INSERT INTO Reseñas(IdPelicula, Contenido, Valoracion, NombreUsuario, Fecha) VALUES (@pIdPelicula, @pContenido, @pValoracion, @pNombreUsuario, @pFecha)";
+
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                    db.Execute(SQL, new {pIdPelicula = Res.IdPelicula, pContenido = Res.Contenido, pValoracion = Res.Valoracion, pNombreUsuario = Res.NombreUsuario, pFecha = Res.Fecha} );
+                }
+
+            }
 
 
             }

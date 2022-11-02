@@ -17,14 +17,19 @@
         <h3 class="blanco tituloResenas">Reseñas:</h3>
       
       <div class="contFormComnt">
-              <form method="post" action="">
-                <textarea type="text"></textarea>
+              <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
+                <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
+                <textarea type="text" name="Contenido"></textarea>
+                <input type="date" name="Fecha">
+                <input type="text" name="NombreUsuario">
+                <input type="number" name="Valoracion">
+                <input type="submit">
               </form>
          </div>
          </div>
       </div>
     </div>
-     
+   
 
      <div id="myModal" class="modal">
 

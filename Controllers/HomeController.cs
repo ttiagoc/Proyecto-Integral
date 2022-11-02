@@ -113,4 +113,21 @@ public class HomeController : Controller
             return ListaPorGenero;
     }
 
+[HttpPost]    public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string nombre){
+
+            DateTime FechaActual = DateTime.Now;
+          
+            Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,nombre,FechaActual);
+            BD.AgregarReseña(Res);
+
+            //   return RedirectToAction("VerInfoSeries" , "Home", new {IdPelicula = IdPelicula});
+
+            return View("Index");
+    }
+
+
+
+
+
+
 }

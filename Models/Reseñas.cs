@@ -19,8 +19,8 @@ namespace Proyecto_Integral.Models
 
             _idPelicula = 0;
             _idSerie = 0;
-            _valoracion = 0;
             _contenido = "";
+             _valoracion = 0;
             _nombreUsuario = "";
             _fecha = new DateTime();
         }
@@ -36,7 +36,16 @@ namespace Proyecto_Integral.Models
 
         }
 
-        
+         public Reseñas(int pidPelicula, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha){
+
+            _idPelicula = pidPelicula;
+            _contenido = pcontenido;
+            _valoracion = pvaloracion;
+            _nombreUsuario = pnombreUsuario;
+            _fecha = pfecha;
+
+        }
+
 
 
         public int IdReseña{
@@ -66,6 +75,10 @@ namespace Proyecto_Integral.Models
             set{_nombreUsuario = value;}
         }
 
+         public DateTime Fecha{
+            get{return _fecha;}
+            set{_fecha = value;}
+        }
 
 
     }
