@@ -27,3 +27,6 @@ https://letterboxd.com/film/smile-2022/
 
 
 https://www.w3schools.com/howto/howto_css_modals.asp
+
+
+hacer que se busquen series en el buscador  
