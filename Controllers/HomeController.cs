@@ -69,8 +69,8 @@ public class HomeController : Controller
 
      public IActionResult VerInfoSeries(int id)
     {
-      // ViewBag.InfoPelicula = BD.ObtenerInfoPelicula(id);
-
+       ViewBag.InfoSerie = BD.ObtenerInfoSeries(id);
+         ViewBag.EstadisticaSerie = BD.ObtenerEstadisticasPeliculas(id);
         return View("DetalleSeries");
     }
 

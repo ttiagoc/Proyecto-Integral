@@ -1,0 +1,47 @@
+
+    <div class="container pt-5">
+      <div class="row">
+         <div class="col-4"> <img src="@ViewBag.InfoSerie.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
+         <div class="col-4" >
+            <h1 class="">@ViewBag.InfoSerie.Nombre</h1>
+            <p class="pt-3 blanco">@ViewBag.InfoSerie.Sinopsis</p> 
+            <hr style="height:2px;border-width:0;color:gray;background-color:white">
+            <p class="pt-1 blanco">Temporadas:  @ViewBag.InfoSerie.Temporadas</p>
+             <p class="blanco">Capitulos totales:  @ViewBag.InfoSerie.CapitulosTotales</p>
+             <p class="blanco">Fecha de estreno:  @ViewBag.InfoSerie.FechaEstreno</p>
+              <p class="blanco">Personaje principal:  @ViewBag.InfoSerie.Protagonista</p>
+              <button type="button" id="myBtn">Más información</button>
+               <hr style="height:2px;border-width:0;color:gray;background-color:white">
+        <h3 class="blanco tituloResenas">Reseñas:</h3>
+      
+      <div class="contFormComnt">
+              <form method="post" action="">
+                <textarea type="text"></textarea>
+              </form>
+         </div>
+         </div>
+      </div>
+    </div>
+     
+
+     <div id="myModal" class="modal">
+
+      <div class="modal-content">
+       <div class="modal-header">
+        
+         
+           <h2 class="text-center">Estadisticas</h2>
+            <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+          <p class="">Recaudación:  @ViewBag.EstadisticaSerie.Recaudacion</p>
+           <p class="">Plata invertida:  @ViewBag.EstadisticaSerie.Presupuesto</p>
+            <p class="">Visualizaciones:  @ViewBag.EstadisticaSerie.Visualizaciones</p>
+             <p class="">Pais con más éxito:  @ViewBag.EstadisticaSerie.PaisConMasExito</p>
+       </div>
+       
+      </div>
+     </div>   
+
+      
+        
