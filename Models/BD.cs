@@ -150,18 +150,20 @@ namespace Proyecto_Integral.Models
 
               public static Series ObtenerInfoSeries(int IdSerie){
               Series miSerie;
-                string SQL = "SELECT * FROM Series WHERE IdSerie = @h";
+                string SQL = "SELECT * FROM Series WHERE IdSerie = @qh";
               using(SqlConnection db = new SqlConnection(_connectionString)){
-                miSerie = db.QueryFirstOrDefault<Series>(SQL, new{h = IdSerie});
+                miSerie = db.QueryFirstOrDefault<Series>(SQL, new{qh = IdSerie});
             }
+           System.Console.WriteLine(miSerie.Nombre); 
+           System.Console.WriteLine(122);
             return miSerie;
         }
 
           public static Estadisticas ObtenerEstadisticasSeries(int IdSerie){
               Estadisticas miEstadistica;
-                string SQL = "SELECT * FROM Estadisticas WHERE IdSerie = @a";
+                string SQL = "SELECT * FROM Estadisticas WHERE IdSerie = @y";
               using(SqlConnection db = new SqlConnection(_connectionString)){
-                miEstadistica = db.QueryFirstOrDefault<Estadisticas>(SQL, new{a = IdSerie});
+                miEstadistica = db.QueryFirstOrDefault<Estadisticas>(SQL, new{y = IdSerie});
             }
             return miEstadistica;
         }

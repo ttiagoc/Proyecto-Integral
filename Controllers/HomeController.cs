@@ -67,11 +67,12 @@ public class HomeController : Controller
         return View("Series");
     }
 
-     public IActionResult VerInfoSeries(int id)
+     public IActionResult VerInfoSeries(int IdSerie)
     {
-       ViewBag.InfoSerie = BD.ObtenerInfoSeries(id);
-         ViewBag.EstadisticaSerie = BD.ObtenerEstadisticasPeliculas(id);
-        return View("DetalleSeries");
+         ViewBag.InfoSerie = BD.ObtenerInfoSeries(IdSerie);
+         ViewBag.EstadisticaSerie = BD.ObtenerEstadisticasSeries(IdSerie);
+
+         return View("DetalleSeries");
     }
 
     public IActionResult HacerBusqueda(string busc){

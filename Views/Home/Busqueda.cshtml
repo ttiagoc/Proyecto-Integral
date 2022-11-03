@@ -4,9 +4,13 @@
 }
 
 
-@if (@ViewBag.Resultados != null)
+@if (@ViewBag.Resultados[0] == "")
 {
-  <div class="container m-auto">
+   <h1 class="text-center pt-5 pb-5">Lo siento, no hay resultados para tu búsqueda</h1>
+}else{
+   
+
+    <div class="container m-auto">
    <div class="row">
     @foreach (Peliculas pelis in @ViewBag.Resultados)
     {
@@ -26,6 +30,4 @@
     }  
    </div>
   </div>
-}else{
-    <h1 class="text-center pt-5 pb-5">Lo siento, no hay resultados para tu búsqueda</h1>
 }

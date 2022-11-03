@@ -85,5 +85,12 @@ namespace Proyecto_Integral.Models
         }
 
 
+        public DateTime FechaEstreno{
+            get{
+                return _fechaEstreno;
+            }set{
+                _fechaEstreno = value;
+            }
+        }
     }
 }

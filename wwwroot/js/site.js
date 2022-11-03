@@ -44,13 +44,16 @@ function FiltrarGeneros(){
       data:  {num:a},           
         success:
           function (resp){  
+            
               console.log(a);           
               $('#Todas').hide();
               $('#Filtrada').html('');
               console.log(resp);
 
               resp.forEach(val => {
-              $('#Filtrada').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4" style="width: 18rem;"><img id="Todas" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img><div class="card-body"><a id="Todas" class="sd h4 nomCards"> ' + val.nombre  + ' </a></div></div></div>');
+                
+                var varr = "/Home/VerInfoPeliculas?IdPelicula=" + val.idPelicula;
+              $('#Filtrada').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4" style="width: 18rem;"><a href =' + varr + '><img id="Todas" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img></a><div class="card-body"><a id="Todas" class="sd h4 nomCards" href =' + varr + '      > ' + val.nombre  + ' </a></div></div></div>');
               
 
              

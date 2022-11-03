@@ -154,7 +154,9 @@ p{
 }
 
 
-
+.redondeado2{
+  border-radius: 20px;
+}
 
 
 select {
