@@ -4,15 +4,12 @@
 }
 
 
-@if (@ViewBag.Resultados[0] == "")
+@if (@ViewBag.ResultadosPeliculas != null)
 {
-   <h1 class="text-center pt-5 pb-5">Lo siento, no hay resultados para tu búsqueda</h1>
-}else{
-   
-
-    <div class="container m-auto">
+  <h1 class="titulos text-center">Peliculas</h1>
+  <div class="container m-auto">
    <div class="row">
-    @foreach (Peliculas pelis in @ViewBag.Resultados)
+    @foreach (Peliculas pelis in @ViewBag.ResultadosPeliculas)
     {
 
      <div class="col pt-5">
@@ -22,6 +19,35 @@
             
           
             <a class="sd h4 nomCards" href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=pelis.IdPelicula})' > @pelis.Nombre </a>
+        
+          </div>
+        </div>
+     </div>
+       
+    }  
+   </div>
+  </div>
+}else{
+    <h1 class="text-center pt-5 pb-5">Lo siento, no hay resultados para tu búsqueda</h1>
+}
+
+
+
+@if (@ViewBag.ResultadosSeries != null)
+{
+  <h1 class="titulos text-center">Series</h1>
+  <div class="container m-auto">
+   <div class="row">
+    @foreach (Series serie in @ViewBag.ResultadosSeries)
+    {
+
+     <div class="col pt-5">
+       <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
+            <a href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' ><img class="card-img-top transparencia" src="@serie.Foto" alt="Card image cap"  height="400" width="auto"></a> 
+          <div class="card-body">
+            
+          
+            <a class="sd h4 nomCards" href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' > @serie.Nombre </a>
         
           </div>
         </div>

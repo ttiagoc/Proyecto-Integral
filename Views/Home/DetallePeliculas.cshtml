@@ -16,7 +16,7 @@
                <hr style="height:2px;border-width:0;color:gray;background-color:white">
         <h3 class="blanco tituloResenas">Reseñas:</h3>
       
-      <div class="contFormComnt">
+      @* <div class="contFormComnt">
               <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
                 <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
                 <textarea type="text" name="Contenido"></textarea>
@@ -25,11 +25,22 @@
                 <input type="number" name="Valoracion">
                 <input type="submit">
               </form>
-         </div>
+         </div> *@
+
+         
+      @foreach (Reseñas res in @ViewBag.ListaReseñas)
+      {
+        <div class="border">
+        <p class="blanco">Reseña de @res.NombreUsuario</p>
+        <p class="blanco">@res.Contenido</p>
+        </div>
+      }
+
+
          </div>
       </div>
     </div>
-   
+
 
      <div id="myModal" class="modal">
 
@@ -41,7 +52,7 @@
             <span class="close">&times;</span>
       </div>
       <div class="modal-body">
-          <p class="">Recaudación:  @ViewBag.EstadisticaPelicula.Recaudacion</p>
+          <p class="letra">Recaudación:  @ViewBag.EstadisticaPelicula.Recaudacion</p>
            <p class="">Plata invertida:  @ViewBag.EstadisticaPelicula.Presupuesto</p>
             <p class="">Visualizaciones:  @ViewBag.EstadisticaPelicula.Visualizaciones</p>
              <p class="">Pais con más éxito:  @ViewBag.EstadisticaPelicula.PaisConMasExito</p>

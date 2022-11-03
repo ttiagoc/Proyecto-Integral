@@ -55,7 +55,7 @@ public class HomeController : Controller
     {
          ViewBag.InfoPelicula = BD.ObtenerInfoPeliculas(IdPelicula);
          ViewBag.EstadisticaPelicula = BD.ObtenerEstadisticasPeliculas(IdPelicula);
-     
+          ViewBag.ListaReseñas = BD.ListarReseñas(IdPelicula,false);
 
         return View("DetallePeliculas");
     }
@@ -71,14 +71,14 @@ public class HomeController : Controller
     {
          ViewBag.InfoSerie = BD.ObtenerInfoSeries(IdSerie);
          ViewBag.EstadisticaSerie = BD.ObtenerEstadisticasSeries(IdSerie);
-
+         ViewBag.ListaReseñas = BD.ListarReseñas(IdSerie,true);
          return View("DetalleSeries");
     }
 
     public IActionResult HacerBusqueda(string busc){
 
-        ViewBag.Resultados = BD.BusquedaPersonalizada(busc);
-       
+        ViewBag.ResultadosPeliculas = BD.BusquedaPersonalizadaPeliculas(busc);
+        ViewBag.ResultadosSeries = BD.BusquedaPersonalizadaSeries(busc);
        
         return View("Busqueda");
     }

@@ -49,6 +49,26 @@ namespace Proyecto_Integral.Models
 
             }
 
+            
+         public static List <Reseñas> ListarReseñas(int id,bool tipo)
+         {
+             List <Reseñas> _ListaReseñas = new List<Reseñas>();
+             string sql;
+             if(tipo){
+                   sql = "SELECT * FROM Reseñas where IdSerie = @serie";
+             }else{
+                   sql = "SELECT * FROM Reseñas where IdPelicula = @serie";
+             }
+                  
+                     using(SqlConnection db = new SqlConnection(_connectionString))
+                      {
+                         _ListaReseñas = db.Query<Reseñas>(sql,new{serie = id}).ToList();
+                      }
+
+               return _ListaReseñas;
+
+            }
+
                public static Peliculas PeliculaMasExitosa(){
 
                 Peliculas peliculaExitosa;
@@ -74,7 +94,7 @@ namespace Proyecto_Integral.Models
                   
                }
            
-            public static List<Peliculas> BusquedaPersonalizada(string busc){
+            public static List<Peliculas> BusquedaPersonalizadaPeliculas(string busc){
 
                   List <Peliculas> ListaResultados = new List<Peliculas>();
 
@@ -82,6 +102,23 @@ namespace Proyecto_Integral.Models
                    string SQL = "SELECT * FROM Peliculas where Nombre like '" + busc + "%'";
                    using(SqlConnection db = new SqlConnection(_connectionString)){
                    ListaResultados = db.Query<Peliculas>(SQL).ToList();
+                   }
+            
+
+               return ListaResultados;
+
+                   }
+
+
+
+              public static List<Series> BusquedaPersonalizadaSeries(string busc){
+
+                  List <Series> ListaResultados = new List<Series>();
+
+                  
+                   string SQL = "SELECT * FROM Series where Nombre like '" + busc + "%'";
+                   using(SqlConnection db = new SqlConnection(_connectionString)){
+                   ListaResultados = db.Query<Series>(SQL).ToList();
                    }
             
 
