@@ -13,8 +13,9 @@
              <p class="blanco">Fecha de estreno:  @ViewBag.InfoPelicula.FechaEstreno</p>
               
               <button type="button" id="myBtn">Más información</button>
-               <hr style="height:2px;border-width:0;color:gray;background-color:white">
-        <h3 class="blanco tituloResenas">Reseñas:</h3>
+               
+        <h3 class="blanco tituloResenas pt-4">Reseñas:</h3>
+             <button type="button" id="myBtn2">Hacer reseña</button>
       
       @* <div class="contFormComnt">
               <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
@@ -30,9 +31,11 @@
          
       @foreach (Reseñas res in @ViewBag.ListaReseñas)
       {
-        <div class="border">
-        <p class="blanco">Reseña de @res.NombreUsuario</p>
-        <p class="blanco">@res.Contenido</p>
+        <div class="">
+        <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
+        <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <p class="blanco ">@res.Valoracion Estrella/s</p> </div></div>
+         <p class="blanco">@res.Contenido</p>
+          
         </div>
       }
 
@@ -41,6 +44,7 @@
       </div>
     </div>
 
+      @*modal 1*@
 
      <div id="myModal" class="modal">
 
@@ -53,13 +57,53 @@
       </div>
       <div class="modal-body">
           <p class="letra">Recaudación:  @ViewBag.EstadisticaPelicula.Recaudacion</p>
-           <p class="">Plata invertida:  @ViewBag.EstadisticaPelicula.Presupuesto</p>
-            <p class="">Visualizaciones:  @ViewBag.EstadisticaPelicula.Visualizaciones</p>
-             <p class="">Pais con más éxito:  @ViewBag.EstadisticaPelicula.PaisConMasExito</p>
+           <p class="letra">Plata invertida:  @ViewBag.EstadisticaPelicula.Presupuesto</p>
+            <p class="letra">Visualizaciones:  @ViewBag.EstadisticaPelicula.Visualizaciones</p>
+             <p class="letra">Pais con más éxito:  @ViewBag.EstadisticaPelicula.PaisConMasExito</p>
        </div>
        
       </div>
      </div>   
 
       
+      @*modal 2*@
         
+
+         <div id="myModal2" class="modal">
+
+      <div class="modal-content">
+       <div class="modal-header">
+        
+         
+           <h2 class="text-center">Crear una reseña</h2>
+            <span class="close2">&times;</span>
+      </div>
+      <div class="modal-body">
+          <div class="contFormComnt">
+              <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
+
+                <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
+                <div class="col">
+                  <div class="row">
+                <input type="text" name="NombreUsuario" placeholder="Nombre de usuario" class="redondeado3" required>
+                </div>
+                <div class="pt-3"></div>
+                <div class="row">
+                <textarea type="text" name="Contenido" placeholder="Escribe aquí tu reseña" class="redondeado3" required></textarea>
+                </div>
+                 <div class="pb-3"></div>
+                          <div class="row">
+                <input type="number" name="Valoracion" placeholder="Valoración (1 a 5)" max="5" min="1" class="redondeado3" required>
+                          </div>
+                          <div class="row">
+                             <div class="pb-3 "></div>
+                <input type="submit" class="btn btn-primary">
+                </div>
+                </div>
+              </form>
+         </div>
+       
+      </div>
+     </div>   
+          </div>   
+    

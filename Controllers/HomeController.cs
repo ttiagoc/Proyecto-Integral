@@ -114,7 +114,7 @@ public class HomeController : Controller
             return ListaPorGenero;
     }
 
-[HttpPost]    public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string nombre){
+[HttpPost] public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string nombre){
 
             DateTime FechaActual = DateTime.Now;
           
