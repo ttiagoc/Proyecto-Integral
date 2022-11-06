@@ -79,7 +79,7 @@ public class HomeController : Controller
 
         ViewBag.ResultadosPeliculas = BD.BusquedaPersonalizadaPeliculas(busc);
         ViewBag.ResultadosSeries = BD.BusquedaPersonalizadaSeries(busc);
-       
+        ViewBag.Busqueda = busc;
         return View("Busqueda");
     }
 
@@ -121,9 +121,7 @@ public class HomeController : Controller
             Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,nombre,FechaActual);
             BD.AgregarReseña(Res);
 
-            //   return RedirectToAction("VerInfoSeries" , "Home", new {IdPelicula = IdPelicula});
-
-            return View("Index");
+            return RedirectToAction("VerInfoPeliculas" , "Home", new {IdPelicula = IdPelicula});
     }
 
 

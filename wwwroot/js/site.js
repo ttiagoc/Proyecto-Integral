@@ -13,8 +13,8 @@ function CambiarFoto(){
           function (resp){                      
               $('#Descubrir').hide();
               $('#mostrar').html('');
-              
-              $('#mostrar').append('<img src="' + resp.foto +'" height="500px" width="auto" class="pt-3"></img>'); 
+              var variable = "/Home/VerInfoPeliculas?IdPelicula=" + resp.idPelicula;
+              $('#mostrar').append('<a href=' + variable + ' ><img src="' + resp.foto +'" height="500px" width="auto" class="pt-3"></img></a>'); 
                },
          error:
           function(){
@@ -99,6 +99,7 @@ window.onclick = function(event) {
 
 var btn2 = document.getElementById("myBtn2");
 var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("close2")[0];
 
 btn2.onclick = function() {
   modal2.style.display = "block";
@@ -116,4 +117,3 @@ window.onclick = function(event) {
   }
 }
 
-var span2 = document.getElementById("close2")[0];

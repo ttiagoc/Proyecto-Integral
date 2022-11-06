@@ -3,9 +3,9 @@
 }
 
     <center>
-    <img src="/Imagenes/Logo.png" height="300px" width="auto">
+    <img src="/Imagenes/logo2.png" height="300px" width="auto">
     </center>
-    <h1 class="text-center pb-4 titulos h1 ">Bienvenido a Papio Reviews</h1>
+    <h1 class="text-center pb-4 titulos h1">Bienvenido a Papio Reviews</h1>
 
     <h3 class="text-center blanco">Hacé un seguimiento de las películas que viste.</h3>
     <h3 class="text-center blanco">Guardá las que quieras ver.</h3> 
@@ -19,24 +19,23 @@
       <h1 class="titulos pt-5 pb-3">Pelicula destacada</h1>
     <div class="container pt-3">
       <div class="row">
-         <div class="col-4"> <img src="@ViewBag.PeliExito.Foto" class="sombra" height="500px" width="auto" class="pt-5"></a></div>
+         <div class="col-4"> <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=ViewBag.PeliExito.IdPelicula})'><img src="@ViewBag.PeliExito.Foto" class="sombra" height="500px" width="auto" class="pt-5"></a></div>
          <div class="col"><h1 class="">@ViewBag.PeliExito.Nombre</h1><p class="pt-3 blanco">@ViewBag.PeliExito.Sinopsis</p> </div>
          
       </div>
     </div>
 
 
-    <h1 class="text-center pt-5 titulos">Descubre una película!</h1>
+    <h1 class="pt-5 titulos">Descubre una película!</h1>
 
      <div class="container">
 
-      <center>
-      <img src="@ViewBag.PeliRandom.Foto" id="Descubrir"   height="500px" width="auto" class="pt-3">
+      <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=ViewBag.PeliRandom.IdPelicula})'><img src="@ViewBag.PeliRandom.Foto" id="Descubrir"   height="500px" width="auto" class="pt-3"></a>
       <div class="" id="mostrar"></div>
-      </center>
-      <center class="pt-3">
+   
+      <div class="pt-3">
       <button id="Cambiar" type="button" onclick="CambiarFoto()" class="btn btn-primary">Descubrir!</button>
-      </center>
+      </div>
     
     </div>
 
