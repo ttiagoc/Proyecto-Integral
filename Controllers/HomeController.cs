@@ -24,10 +24,7 @@ public class HomeController : Controller
 
          int cantPelis = TodasPelis.Count();
 
-         Random random = new Random();
-        int num = random.Next(0,cantPelis);
-        
-         ViewBag.PeliRandom = TodasPelis[num];
+         ViewBag.PeliRandom = BD.ObtenerPeliRandom(cantPelis);
 
         return View();
     }

@@ -35,6 +35,22 @@ namespace Proyecto_Integral.Models
 
             }
 
+              public static Peliculas ObtenerPeliRandom(int cant)
+         {
+            Peliculas peliRandom = new Peliculas();
+               Random random = new Random();
+               int num = random.Next(0,cant);
+             using(SqlConnection db = new SqlConnection(_connectionString))
+            
+             {
+                string sql = "SELECT * FROM Peliculas where IdPelicula =" + num;
+                peliRandom = db.QueryFirstOrDefault<Peliculas>(sql);
+             }
+
+               return peliRandom;
+
+            }
+
 
            public static List <Series> ListarSeries()
          {
