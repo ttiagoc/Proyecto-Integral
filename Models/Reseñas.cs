@@ -11,7 +11,7 @@ namespace Proyecto_Integral.Models
     {
         private int _idReseña, _idPelicula, _idSerie;
         private float _valoracion;
-        private string _contenido, _nombreUsuario;
+        private string _contenido, _nombreUsuario,_foto;
 
         private DateTime _fecha;
 
@@ -23,9 +23,10 @@ namespace Proyecto_Integral.Models
              _valoracion = 0;
             _nombreUsuario = "";
             _fecha = new DateTime();
+            _foto = "";
         }
 
-        public Reseñas(int pidPelicula, int pidSerie, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha){
+        public Reseñas(int pidPelicula, int pidSerie, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha, string pfoto){
 
             _idPelicula = pidPelicula;
             _idSerie = pidSerie;
@@ -33,17 +34,18 @@ namespace Proyecto_Integral.Models
             _valoracion = pvaloracion;
             _nombreUsuario = pnombreUsuario;
             _fecha = pfecha;
+            _foto = pfoto;
 
         }
 
-         public Reseñas(int pidPelicula, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha){
+         public Reseñas(int pidPelicula, string pcontenido, float pvaloracion, string pnombreUsuario, DateTime pfecha,string pfoto){
 
             _idPelicula = pidPelicula;
             _contenido = pcontenido;
             _valoracion = pvaloracion;
             _nombreUsuario = pnombreUsuario;
             _fecha = pfecha;
-
+            _foto = pfoto;
         }
 
 
@@ -80,6 +82,10 @@ namespace Proyecto_Integral.Models
             set{_fecha = value;}
         }
 
+         public string Foto{
+            get{return _foto;}
+            set{_foto = value;}
+        }
 
     }
 }

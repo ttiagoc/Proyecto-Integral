@@ -20,7 +20,7 @@
               <button type="button" class="btn boton" id="myBtn">Más información</button>
                
         <h3 class="blanco tituloResenas pt-4">Reseñas:</h3>
-             <button type="button" id="myBtn2">Hacer reseña</button>
+             <button type="button" id="myBtn2"><img src="/Imagenes/botonAgregar.png" height="40px" class="redondeado2"   width="auto"></button>
       
       @* <div class="contFormComnt">
               <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
@@ -38,7 +38,7 @@
       {
         <div class="">
         <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
-        <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@ViewBag.Estrellas"> <p>@ViewBag.Estrellas</p> </div></div>
+        <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@res.Foto" height="20px" width="auto">  </div></div>
          <p class="blanco">@res.Contenido</p>
           
         </div>

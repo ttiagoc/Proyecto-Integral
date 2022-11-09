@@ -52,9 +52,40 @@ public class HomeController : Controller
     {
          ViewBag.InfoPelicula = BD.ObtenerInfoPeliculas(IdPelicula);
          ViewBag.EstadisticaPelicula = BD.ObtenerEstadisticasPeliculas(IdPelicula);
-          ViewBag.ListaReseñas = BD.ListarReseñas(IdPelicula,false);
-
-        return View("DetallePeliculas");
+          
+        List<Reseñas> ListaReseñas = new List<Reseñas>();
+        ListaReseñas = BD.ListarReseñas(IdPelicula,false);
+        ViewBag.ListaReseñas = ListaReseñas;
+        List<string> fotos = new List<string>();
+       
+        int i = 0;
+         foreach (Reseñas res in ListaReseñas)
+         {
+            switch (ListaReseñas[i].Valoracion)
+            {
+                case 1:
+                    fotos.Add("/Imagenes/1star.png");
+                    break;
+                case 2:
+                     fotos.Add("/Imagenes/2star.png");
+                    break;
+                case 3:
+                      fotos.Add("/Imagenes/3star.png");
+                    break;
+                case 4:
+                     fotos.Add("/Imagenes/4star.png");
+                    break;
+                case 5:
+                     fotos.Add("/Imagenes/5star.png");
+                    break;
+                default:
+                    System.Console.WriteLine("error");
+                    break;
+            }
+            i++;
+         }
+         ViewBag.Estrellas = fotos;
+         return View("DetallePeliculas");
     }
 
      public IActionResult VerSeries()
@@ -73,10 +104,7 @@ public class HomeController : Controller
          ViewBag.ListaReseñas = ListaReseñas;
          int i = 0;
          List<string> foto = new List<string>();
-         System.Console.WriteLine(ListaReseñas[0].Valoracion);  
-         System.Console.WriteLine(ListaReseñas[1].Valoracion);  
-          System.Console.WriteLine(ListaReseñas[2].Valoracion);  
-          System.Console.WriteLine(2222);
+        
          foreach (Reseñas res in ListaReseñas)
          {
             switch (ListaReseñas[i].Valoracion)
@@ -148,8 +176,30 @@ public class HomeController : Controller
 [HttpPost] public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string NombreUsuario){
 
             DateTime FechaActual = DateTime.Now;
-            System.Console.WriteLine(valoracion);
-            Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,NombreUsuario,FechaActual);
+            string Foto = "";
+             switch (valoracion)
+            {
+                case 1:
+                    Foto ="/Imagenes/1star.png";
+                    break;
+                case 2:
+                     Foto ="/Imagenes/2star.png";
+                    break;
+                case 3:
+                      Foto ="/Imagenes/3star.png";
+                    break;
+                case 4:
+                     Foto ="/Imagenes/4star.png";
+                    break;
+                case 5:
+                     Foto ="/Imagenes/5star.png";
+                    break;
+                default:
+                    System.Console.WriteLine("nashex");
+                    break;
+            }
+        
+            Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,NombreUsuario,FechaActual,Foto);
             BD.AgregarReseña(Res);
 
             return RedirectToAction("VerInfoPeliculas" , "Home", new {IdPelicula = IdPelicula});
