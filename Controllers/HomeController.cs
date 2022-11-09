@@ -71,7 +71,41 @@ public class HomeController : Controller
     {
          ViewBag.InfoSerie = BD.ObtenerInfoSeries(IdSerie);
          ViewBag.EstadisticaSerie = BD.ObtenerEstadisticasSeries(IdSerie);
-         ViewBag.ListaReseñas = BD.ListarReseñas(IdSerie,true);
+         List<Reseñas> ListaReseñas = new List<Reseñas>();
+         ListaReseñas = BD.ListarReseñas(IdSerie,true);
+         ViewBag.ListaReseñas = ListaReseñas;
+         int i = 0;
+         List<string> foto = new List<string>();
+         System.Console.WriteLine(ListaReseñas[0].Valoracion);  
+         System.Console.WriteLine(ListaReseñas[1].Valoracion);  
+          System.Console.WriteLine(ListaReseñas[2].Valoracion);  
+          System.Console.WriteLine(2222);
+         foreach (Reseñas res in ListaReseñas)
+         {
+            switch (ListaReseñas[i].Valoracion)
+            {
+                case 1:
+                    foto.Add("/Imagenes/1star.png");
+                    break;
+                case 2:
+                     foto.Add("/Imagenes/2star.png");
+                    break;
+                case 3:
+                      foto.Add("/Imagenes/3star.png");
+                    break;
+                case 4:
+                     foto.Add("/Imagenes/4star.png");
+                    break;
+                case 5:
+                     foto.Add("/Imagenes/5star.png");
+                    break;
+                default:
+                    System.Console.WriteLine("nashex");
+                    break;
+            }
+            i++;
+         }
+         ViewBag.Estrellas = foto;
          return View("DetalleSeries");
     }
 
@@ -114,11 +148,11 @@ public class HomeController : Controller
             return ListaPorGenero;
     }
 
-[HttpPost] public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string nombre){
+[HttpPost] public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string NombreUsuario){
 
             DateTime FechaActual = DateTime.Now;
-          
-            Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,nombre,FechaActual);
+            System.Console.WriteLine(valoracion);
+            Reseñas Res = new Reseñas(IdPelicula,contenido,valoracion,NombreUsuario,FechaActual);
             BD.AgregarReseña(Res);
 
             return RedirectToAction("VerInfoPeliculas" , "Home", new {IdPelicula = IdPelicula});

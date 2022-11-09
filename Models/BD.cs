@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-    // private static string server = Dns.GetHostName();
-    //   private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+     private static string server = Dns.GetHostName();
+       private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-                DataBase=TpFinal;Trusted_Connection=True;";
+          //  private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+            //    DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -85,7 +85,7 @@ namespace Proyecto_Integral.Models
 
                   List <Peliculas> ListaPeliculasRecientes = new List<Peliculas>();
 
-                   string SQL = "SELECT top 3 * FROM Peliculas order by FechaEstreno";
+                   string SQL = "SELECT top 3 * FROM Peliculas order by FechaEstreno desc";
                    using(SqlConnection db = new SqlConnection(_connectionString)){
                    ListaPeliculasRecientes = db.Query<Peliculas>(SQL).ToList();
             }

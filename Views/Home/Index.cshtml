@@ -10,7 +10,64 @@
     <h3 class="text-center blanco">Hacé un seguimiento de las películas que viste.</h3>
     <h3 class="text-center blanco">Guardá las que quieras ver.</h3> 
     <h3 class="text-center blanco pb-5">Contale a tus amigos lo que es bueno.</h3>
-   
+  
+
+
+<center>
+      <h1 class="titulos pt-5 pb-3">Peliculas recientes</h1>
+
+            <div class="slide-inner">
+                <input class="slide-open" type="radio" id="slide-1" 
+                      name="slide" aria-hidden="true" hidden="" checked="checked">
+                <div class="slide-item">
+                      <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=ViewBag.PelisRecientes[0].IdPelicula})'><img src="@ViewBag.PelisRecientes[0].Foto"></a>
+                </div>
+                <input class="slide-open" type="radio" id="slide-2" 
+                      name="slide" aria-hidden="true" hidden="">
+                <div class="slide-item">
+                    <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=ViewBag.PelisRecientes[1].IdPelicula})'><img src="@ViewBag.PelisRecientes[1].Foto"></a>
+                </div>
+                <input class="slide-open" type="radio" id="slide-3" 
+                      name="slide" aria-hidden="true" hidden="">
+                <div class="slide-item">
+                     <a href='@Url.Action("VerInfoPeliculas","Home", new {IdPelicula=ViewBag.PelisRecientes[2].IdPelicula})'><img src="@ViewBag.PelisRecientes[2].Foto"></a>
+                </div>
+                <label for="slide-3" class="slide-control prev control-1">‹</label>
+                <label for="slide-2" class="slide-control next control-1">›</label>
+                <label for="slide-1" class="slide-control prev control-2">‹</label>
+                <label for="slide-3" class="slide-control next control-2">›</label>
+                <label for="slide-2" class="slide-control prev control-3">‹</label>
+                <label for="slide-1" class="slide-control next control-3">›</label>
+                <ol class="slide-indicador">
+                    <li>
+                        <label for="slide-1" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-2" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-3" class="slide-circulo">•</label>
+                    </li>
+                </ol>
+           
+        </div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
