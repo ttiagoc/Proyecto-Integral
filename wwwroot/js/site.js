@@ -45,7 +45,7 @@ function FiltrarGeneros(){
         success:
           function (resp){  
             
-              console.log(a);           
+                     
               $('#Todas').hide();
               $('#Filtrada').html('');
               console.log(resp);
