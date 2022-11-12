@@ -18,11 +18,11 @@
              <p class="blanco">Fecha de estreno:  @ViewBag.InfoPelicula.FechaEstreno</p>
               
               <button type="button" class="btn boton" id="myBtn">Más información</button>
-               
-        <h3 class="blanco tituloResenas pt-4">Reseñas:</h3>
-             <button type="button" class="aaaaa" id="myBtn2"><img src="/Imagenes/botonAgregar.png" height="40px" class="redondeado2"   width="auto"></button>
-      
-      @* <div class="contFormComnt">
+               <div class="pt-4"></div>
+          <div class="row">  <div class="col"><h3 class="blanco tituloResenas">Reseñas:</h3></div><div class="col"><button type="button" class="botonRes" id="myBtn2">+</button></div> </div>
+        
+@*       
+       <div class="contFormComnt">
               <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
                 <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
                 <textarea type="text" name="Contenido"></textarea>
@@ -31,7 +31,7 @@
                 <input type="number" name="Valoracion">
                 <input type="submit">
               </form>
-         </div> *@
+         </div>  *@
 
          
       @foreach (Reseñas res in @ViewBag.ListaReseñas)
@@ -71,10 +71,10 @@
      </div>   
 
       
-      @*modal 2*@
+      modal 2
         
 
-         @* <div id="myModal2" class="modal">
+         <div id="myModal2" class="modal">
 
       <div class="modal-content">
        <div class="modal-header">
@@ -111,48 +111,6 @@
       </div>
      </div>   
           </div>   
-     *@
+   
 
-
-     <div id="myModal2" class="modal">
-
-      <div class="modal-content">
-       <div class="modal-header">
-        
-         
-<div class="signupSection">
-  <div class="info">
     
-    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
-   
-  </div><div class="modal-body">
-  <form action='@Url.Action("GuardarReseñaPelicula","Home")' method="POST" class="signupForm" name="signupform">
-     <span class="close2">&times;</span>
-     <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
-    <h2>Crear una reseña</h2>
-   
-    <ul class="noBullet">
-      <li>
-        <label for="username"></label>
-         <input type="text" name="NombreUsuario" placeholder="Nombre de usuario" class="redondeado3 inputFields" required  autocomplete="off" oninput="return userNameValidation(this.value)>
-      </li>
-      <li>
-        <label for="password"></label>
-       
-        <textarea type="text" name="Contenido" placeholder="Escribe aquí tu reseña" class="redondeado3 inputFields " required oninput="return passwordValidation(this.value)"></textarea>
-      </li>
-      <li>
-        <label for="email"></label>
-        
-        <input type="number" name="Valoracion" placeholder="Valoración (1 a 5)" max="5" min="1" class="redondeado3 inputFields" required>
-      </li>
-      <li id="center-btn">
-        <input type="submit" id="join-btn" name="join" alt="Join" value="Confirmar">
-      </li>
-    </ul>
-  </form>
-</div></div>
-       
-      </div>
-     </div>   
-          </div>   

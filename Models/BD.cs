@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-     private static string server = Dns.GetHostName();
-       private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+    //  private static string server = Dns.GetHostName();
+    //    private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-          //  private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-            //    DataBase=TpFinal;Trusted_Connection=True;";
+          private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+               DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -39,11 +39,11 @@ namespace Proyecto_Integral.Models
          {
             Peliculas peliRandom = new Peliculas();
                Random random = new Random();
-               int num = random.Next(0,cant);
+               int num = random.Next(1,13);
              using(SqlConnection db = new SqlConnection(_connectionString))
             
              {
-                string sql = "SELECT * FROM Peliculas where IdPelicula =" + num;
+                string sql = "SELECT * FROM Peliculas where Random =" + num;
                 peliRandom = db.QueryFirstOrDefault<Peliculas>(sql);
              }
 

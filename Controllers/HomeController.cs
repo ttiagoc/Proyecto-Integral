@@ -56,35 +56,7 @@ public class HomeController : Controller
         List<Reseñas> ListaReseñas = new List<Reseñas>();
         ListaReseñas = BD.ListarReseñas(IdPelicula,false);
         ViewBag.ListaReseñas = ListaReseñas;
-        List<string> fotos = new List<string>();
        
-        int i = 0;
-         foreach (Reseñas res in ListaReseñas)
-         {
-            switch (ListaReseñas[i].Valoracion)
-            {
-                case 1:
-                    fotos.Add("/Imagenes/1star.png");
-                    break;
-                case 2:
-                     fotos.Add("/Imagenes/2star.png");
-                    break;
-                case 3:
-                      fotos.Add("/Imagenes/3star.png");
-                    break;
-                case 4:
-                     fotos.Add("/Imagenes/4star.png");
-                    break;
-                case 5:
-                     fotos.Add("/Imagenes/5star.png");
-                    break;
-                default:
-                    System.Console.WriteLine("error");
-                    break;
-            }
-            i++;
-         }
-         ViewBag.Estrellas = fotos;
          return View("DetallePeliculas");
     }
 
@@ -102,35 +74,7 @@ public class HomeController : Controller
          List<Reseñas> ListaReseñas = new List<Reseñas>();
          ListaReseñas = BD.ListarReseñas(IdSerie,true);
          ViewBag.ListaReseñas = ListaReseñas;
-         int i = 0;
-         List<string> foto = new List<string>();
         
-         foreach (Reseñas res in ListaReseñas)
-         {
-            switch (ListaReseñas[i].Valoracion)
-            {
-                case 1:
-                    foto.Add("/Imagenes/1star.png");
-                    break;
-                case 2:
-                     foto.Add("/Imagenes/2star.png");
-                    break;
-                case 3:
-                      foto.Add("/Imagenes/3star.png");
-                    break;
-                case 4:
-                     foto.Add("/Imagenes/4star.png");
-                    break;
-                case 5:
-                     foto.Add("/Imagenes/5star.png");
-                    break;
-                default:
-                    System.Console.WriteLine("nashex");
-                    break;
-            }
-            i++;
-         }
-         ViewBag.Estrellas = foto;
          return View("DetalleSeries");
     }
 
