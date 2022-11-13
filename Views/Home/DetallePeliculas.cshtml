@@ -5,7 +5,7 @@
 
 
 
-
+<div class="d-flex justify-content-center">
     <div class="container pt-5">
       <div class="row">
          <div class="col-4"> <img src="@ViewBag.InfoPelicula.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
@@ -49,6 +49,8 @@
       </div>
     </div>
 
+    </div>
+
       @*modal 1*@
 
      <div id="myModal" class="modal">
@@ -71,9 +73,9 @@
      </div>   
 
       
-      modal 2
-        
 
+        
+@* 
          <div id="myModal2" class="modal">
 
       <div class="modal-content">
@@ -111,6 +113,61 @@
       </div>
      </div>   
           </div>   
-   
+    *@
 
     
+
+
+  <div id="myModal2" class="modal">
+      
+      
+        
+    	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+                      
+                       <div class="modal-header">
+                      
+											<h4 class="mb-4 pb-3 blanco text-center">Crear reseña</h4>
+                      <span class="close2">&times;</span>
+                    
+                      </div>
+                        <div class="modal-body">
+                      <form method="post" action='@Url.Action("GuardarReseñaPelicula","Home")'>
+                          <input class="form-control" type="hidden" name="IdPelicula" value=@ViewBag.InfoPelicula.IdPelicula >
+											<div class="form-group">
+											<input type="text" name="NombreUsuario" placeholder="Nombre de usuario" class="redondeado3 form-style" autocomplete="off" required>
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												 <textarea type="text" name="Contenido" placeholder="Escribe aquí tu reseña" class="redondeado3 form-style" required></textarea>
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+                      <div class="form-group mt-2">
+												  <input type="number" name="Valoracion" placeholder="Valoración (1 a 5)" max="5" min="1" class="redondeado3 form-style" required>
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+                      <div class="pt-3"></div>
+											  <input type="submit" class="btn btn-primary">
+                        </form>
+				      					</div>
+			      					</div>
+			      				</div>
+							</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+  </div>
+  
