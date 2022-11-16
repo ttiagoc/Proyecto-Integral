@@ -48,6 +48,16 @@ namespace Proyecto_Integral.Models
             _foto = pfoto;
         }
 
+        public Reseñas(string pcontenido, int pidSerie, float pvaloracion, string pnombreUsuario, DateTime pfecha,string pfoto){
+
+            _idSerie = pidSerie;
+            _contenido = pcontenido;
+            _valoracion = pvaloracion;
+            _nombreUsuario = pnombreUsuario;
+            _fecha = pfecha;
+            _foto = pfoto;
+        }
+
 
 
         public int IdReseña{

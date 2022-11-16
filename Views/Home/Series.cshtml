@@ -5,18 +5,42 @@
 
 
 
-<div class="container m-auto">
+
+<div class="cont">
+    <form  method="post" id="formGeneros" action="javascript:FiltrarGenerosSeries()" >
+          <select class="" required>
+                      <option selected disabled value="" hidden>Filtrar</option> 
+                      <option value="0">Todas</option>    
+                      <option value = "1" class="opcionS" >Terror</option>
+                      <option value = "2" class="opcionS">Acción</option>
+                      <option value = "3" class="opcionS">Comedia</option>
+                      <option value = "4" class="opcionS">Suspenso</option>
+                      <option value = "5" class="opcionS">Drama</option>
+                      <option value = "6" class="opcionS">Fantasía</option>
+                      <option value = "7" class="opcionS">Infantil</option>
+                      <option value = "8" class="opcionS">Aventura</option>
+                      <option value = "10" class="opcionS">Crimen</option>
+                      <option value = "11" class="opcionS">Ciencia Ficción</option>
+                  
+        </select>
+         <input class="btn-sm btn-primary inp" value="Aplicar" id="formGeneros" type="submit">
+      </form>
+</div>
+
+
+
+<div class="container m-auto" id="all">
    <div class="row">
     @foreach (Series serie in @ViewBag.Series)
     {
 
      <div class="col pt-5">
        <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
-            <a href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' ><img class="card-img-top transparencia" src="@serie.Foto" alt="Card image cap"  height="350px" width="auto"></a> 
+            <a href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' id="all"><img id="all" class="card-img-top transparencia" src="@serie.Foto" alt="Card image cap"  height="350px" width="auto"></a> 
           <div class="card-body">
             
           
-            <a class="sd h4 nomCards" href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' > @serie.Nombre </a>
+            <a class="sd h4 nomCards" href='@Url.Action("VerInfoSeries","Home", new {IdSerie=serie.IdSerie})' id="all"> @serie.Nombre </a>
         
           </div>
         </div>
@@ -25,3 +49,11 @@
     }  
    </div>
   </div>
+
+   <div class="container m-auto" id="">
+   <div class="row" id="filtr">
+
+    
+     </div>
+  </div>
+ 

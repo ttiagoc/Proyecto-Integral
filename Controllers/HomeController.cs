@@ -117,6 +117,26 @@ public class HomeController : Controller
             return ListaPorGenero;
     }
 
+         public List<Series> SeriesGenero(int num){
+        
+        List <Series> ListaPorGenero = new List<Series>();
+        ListaPorGenero = BD.ObtenerSeriePorGenero(num);
+        
+        foreach (Series ser in ListaPorGenero)
+        {
+            System.Console.WriteLine(ser.Nombre);
+            System.Console.WriteLine(1);
+        }
+           // System.Console.WriteLine(1);
+            return ListaPorGenero;
+    }
+
+
+
+
+
+
+
 [HttpPost] public IActionResult GuardarReseñaPelicula(int IdPelicula, string contenido, int valoracion, string NombreUsuario){
 
             DateTime FechaActual = DateTime.Now;
@@ -150,6 +170,37 @@ public class HomeController : Controller
     }
 
 
+    [HttpPost] public IActionResult GuardarReseñaSerie (string contenido,int IdSerie,int valoracion, string NombreUsuario){
+
+            DateTime FechaActual = DateTime.Now;
+            string Foto = "";
+             switch (valoracion)
+            {
+                case 1:
+                    Foto ="/Imagenes/1star.png";
+                    break;
+                case 2:
+                     Foto ="/Imagenes/2star.png";
+                    break;
+                case 3:
+                      Foto ="/Imagenes/3star.png";
+                    break;
+                case 4:
+                     Foto ="/Imagenes/4star.png";
+                    break;
+                case 5:
+                     Foto ="/Imagenes/5star.png";
+                    break;
+                default:
+                    System.Console.WriteLine("nashex");
+                    break;
+            }
+        
+            Reseñas Res = new Reseñas(contenido,IdSerie,valoracion,NombreUsuario,FechaActual,Foto);
+            BD.AgregarReseñaSerie(Res);
+
+            return RedirectToAction("VerInfoSeries" , "Home", new {IdSerie = IdSerie});
+    }
 
 
 

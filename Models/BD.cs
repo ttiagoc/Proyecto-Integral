@@ -13,12 +13,12 @@ namespace Proyecto_Integral.Models
 {
     public class BD
     {
-    //  private static string server = Dns.GetHostName();
-    //    private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
+ private static string server = Dns.GetHostName();
+     private static string _connectionString = @$"Server={server};DataBase=TpFinal;Trusted_Connection=True;";   
 
          
-          private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
-               DataBase=TpFinal;Trusted_Connection=True;";
+          // private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+          //      DataBase=TpFinal;Trusted_Connection=True;";
 
 
 
@@ -185,6 +185,32 @@ namespace Proyecto_Integral.Models
 
 
             }
+
+
+              public static List<Series> ObtenerSeriePorGenero(int genero){
+                  
+                List <Series> _ListaSerieGenero = new List<Series>();
+                string sql;
+                if(genero != 0)
+                {
+                     sql = "SELECT * FROM Series where IdGenero = @b";
+                     using(SqlConnection db = new SqlConnection(_connectionString))
+                      {
+                         _ListaSerieGenero = db.Query<Series>(sql,new{b = genero}).ToList();
+                      }
+                }else{
+                     sql = "SELECT * FROM Series";
+                     using(SqlConnection db = new SqlConnection(_connectionString))
+                     {
+                       _ListaSerieGenero = db.Query<Series>(sql).ToList();
+                      }
+             }
+               
+            
+               return _ListaSerieGenero;
+
+
+            }
          
             public static List<Generos> ObtenerGeneros(){
 
@@ -230,6 +256,17 @@ namespace Proyecto_Integral.Models
                 }
 
             }
+
+             public static void AgregarReseñaSerie(Reseñas Res){
+
+              string SQL = "INSERT INTO Reseñas(Contenido, IdSerie, Valoracion, NombreUsuario, Fecha, Foto) VALUES (@pContenido, @pIdSerie, @pValoracion, @pNombreUsuario, @pFecha, @pFoto)";
+
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                    db.Execute(SQL, new {pContenido = Res.Contenido, pIdSerie = Res.IdSerie,pValoracion = Res.Valoracion, pNombreUsuario = Res.NombreUsuario, pFecha = Res.Fecha, pFoto = Res.Foto} );
+                }
+
+            }
+
 
 
             }

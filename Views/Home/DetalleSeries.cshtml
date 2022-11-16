@@ -15,13 +15,20 @@
               <p class="blanco">Personaje principal:  @ViewBag.InfoSerie.Protagonista</p>
               <button type="button" id="myBtn">Más información</button>
                <hr style="height:2px;border-width:0;color:gray;background-color:white">
-        <h3 class="blanco tituloResenas">Reseñas:</h3>
-      
-      <div class="contFormComnt">
-              <form method="post" action="">
-                <textarea type="text"></textarea>
-              </form>
-         </div>
+                <div class="pt-4"></div>
+          <div class="row">  <div class="col"><h3 class="blanco tituloResenas">Reseñas:</h3></div><div class="col"><button type="button" class="botonRes" id="myBtn2">+</button></div> </div>
+
+
+                  @foreach (Reseñas res in @ViewBag.ListaReseñas)
+      {
+        <div class="">
+        <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
+        <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@res.Foto" height="20px" width="auto">  </div></div>
+         <p class="blanco">@res.Contenido</p>
+          
+        </div>
+      }
+    
          </div>
       </div>
     </div>
@@ -47,4 +54,56 @@
      </div>   
 
       
+        <div id="myModal2" class="modal">
+      
+      
         
+    	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+                      
+                       <div class="modal-header">
+                      
+											<h4 class="mb-4 pb-3 blanco text-center">Crear reseña</h4>
+                      <span class="close2">&times;</span>
+                    
+                      </div>
+                        <div class="modal-body">
+                      <form method="post" action='@Url.Action("GuardarReseñaSerie","Home")'>
+                          <input class="form-control" type="hidden" name="IdSerie" value=@ViewBag.InfoSerie.IdSerie >
+											<div class="form-group">
+											<input type="text" name="NombreUsuario" placeholder="Nombre de usuario" class="redondeado3 form-style" autocomplete="off" required>
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												 <textarea type="text" name="Contenido" placeholder="Escribe aquí tu reseña" class="redondeado3 form-style" required></textarea>
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+                      <div class="form-group mt-2">
+												  <input type="number" name="Valoracion" placeholder="Valoración (1 a 5)" max="5" min="1" class="redondeado3 form-style" required>
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+                      <div class="pt-3"></div>
+											  <input type="submit" class="btn btn-primary">
+                        </form>
+				      					</div>
+			      					</div>
+			      				</div>
+							</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+  </div>
+  
