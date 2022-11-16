@@ -267,10 +267,16 @@ namespace Proyecto_Integral.Models
 
             }
 
+        public static int EliminarReseña(int id){
+                 int reseñasEliminadas = 0;
+                 string sql = "DELETE FROM Reseñas WHERE IdReseña = @reseña";
+                    using(SqlConnection db = new SqlConnection(_connectionString)){
+                      reseñasEliminadas = db.Execute(sql, new {reseña = id} );
+                    }
 
-
+                        return reseñasEliminadas;
             }
 
-
+} 
 
 }

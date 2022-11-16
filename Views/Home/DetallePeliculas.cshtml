@@ -40,7 +40,7 @@
         <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
         <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@res.Foto" height="20px" width="auto">  </div></div>
          <p class="blanco">@res.Contenido</p>
-          
+          <button class="elim"><a class="blanco delete telim" href='@Url.Action("EliminarReseñaP","Home", new {IdReseña = res.IdReseña, IdPelicula = res.IdPelicula})'>Eliminar</a></button>
         </div>
       }
 
@@ -155,7 +155,7 @@
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
                       <div class="pt-3"></div>
-											  <input type="submit" class="btn btn-primary">
+											  <input type="submit" class="btn btn-light button2">
                         </form>
 				      					</div>
 			      					</div>

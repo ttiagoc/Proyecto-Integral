@@ -202,7 +202,18 @@ public class HomeController : Controller
             return RedirectToAction("VerInfoSeries" , "Home", new {IdSerie = IdSerie});
     }
 
+          public IActionResult EliminarReseñaS(int IdReseña, int IdSerie, string aa){
 
+             BD.EliminarReseña(IdReseña);
+
+             return RedirectToAction("VerInfoSeries" , "Home", new {IdSerie = IdSerie});
+    }
+     public IActionResult EliminarReseñaP(int IdReseña, int IdPelicula){
+
+             BD.EliminarReseña(IdReseña);
+
+             return RedirectToAction("VerInfoPeliculas" , "Home", new {IdPelicula = IdPelicula});
+    }
 
 
 }

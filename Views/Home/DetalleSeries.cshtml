@@ -13,8 +13,8 @@
              <p class="blanco">Capitulos totales:  @ViewBag.InfoSerie.CapitulosTotales</p>
              <p class="blanco">Fecha de estreno:  @ViewBag.InfoSerie.FechaEstreno</p>
               <p class="blanco">Personaje principal:  @ViewBag.InfoSerie.Protagonista</p>
-              <button type="button" id="myBtn">Más información</button>
-               <hr style="height:2px;border-width:0;color:gray;background-color:white">
+              <button type="button" id="myBtn" class="btn boton">Más información</button>
+         
                 <div class="pt-4"></div>
           <div class="row">  <div class="col"><h3 class="blanco tituloResenas">Reseñas:</h3></div><div class="col"><button type="button" class="botonRes" id="myBtn2">+</button></div> </div>
 
@@ -25,7 +25,7 @@
         <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
         <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@res.Foto" height="20px" width="auto">  </div></div>
          <p class="blanco">@res.Contenido</p>
-          
+            <td><a class="blanco delete" href='@Url.Action("EliminarReseñaS","Home", new {IdReseña = res.IdReseña, IdSerie = res.IdSerie})'>Eliminar</a></td>
         </div>
       }
     

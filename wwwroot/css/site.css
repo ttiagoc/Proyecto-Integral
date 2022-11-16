@@ -219,6 +219,7 @@ option,select,.inp{
 }
 
 
+
 .linea{
   width:70%;
   text-align:left;
@@ -366,17 +367,45 @@ option,select,.inp{
 
 
 
+.button2 {
+  position: relative;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: #fefefe;
+  color: #ae00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
 
+  height: 50px;
+  width: auto;
+ }
 
+ .button3 {
+  position: relative;
 
+  outline: none;
+  border: 1px solid #303030;
+  background: rgb(69, 162, 224);
+  color: black;  
+  transition: 0.2s;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  
+  height: 28.5px;
+  width: auto;
+ }
+ .buscador{
+  height: 28.5px;
 
-
-
-
-
-
-
-
+}
 
 
 .button1 {
@@ -478,6 +507,8 @@ option,select,.inp{
 
  .boton{
   background-color: white;
+  border-radius: 10px;
+  border: #000000 3px;
  }
 
 
@@ -717,4 +748,30 @@ option,select,.inp{
 	height: 26px;
 	width: auto;
 	display: block;
+}
+
+.zoom {
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.2); 
+}
+
+.zoom2 {
+  transition: transform .2s; 
+}
+
+.zoom2:hover {
+  transform: scale(1.1); 
+}
+
+.elim{
+  border-radius: 10px;
+  background-color: ghostwhite;
+}
+
+.telim{
+  color: #000000;
+  text-decoration: none;
 }

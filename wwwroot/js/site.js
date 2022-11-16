@@ -53,7 +53,7 @@ function FiltrarGeneros(){
               resp.forEach(val => {
                 
                 var varr = "/Home/VerInfoPeliculas?IdPelicula=" + val.idPelicula;
-              $('#Filtrada').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4" style="width: 18rem;"><a href =' + varr + '><img id="Todas" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img></a><div class="card-body"><a id="Todas" class="sd h4 nomCards" href =' + varr + '      > ' + val.nombre  + ' </a></div></div></div>');
+              $('#Filtrada').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4 zoom2" style="width: 18rem;"><a href =' + varr + '><img id="Todas" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img></a><div class="card-body"><a id="Todas" class="sd h4 nomCards" href =' + varr + '      > ' + val.nombre  + ' </a></div></div></div>');
               
 
              
@@ -149,7 +149,7 @@ $.ajax({
           resp.forEach(val => {
             
             var varr = "/Home/VerInfoSeries?IdSerie=" + val.idSerie;
-          $('#filtr').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4" style="width: 18rem;"><a href =' + varr + '><img id="all" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img></a><div class="card-body"><a id="all" class="sd h4 nomCards" href =' + varr + '      > ' + val.nombre  + ' </a></div></div></div>');
+          $('#filtr').append('<div class="col pt-5"><div class="card redondeado m-auto sombra mb-4 zoom2" style="width: 18rem;"><a href =' + varr + '><img id="all" class="card-img-top transparencia" src="' + val.foto +' " height="350px" width="auto"></img></a><div class="card-body"><a id="all" class="sd h4 nomCards" href =' + varr + '      > ' + val.nombre  + ' </a></div></div></div>');
           
 
          
