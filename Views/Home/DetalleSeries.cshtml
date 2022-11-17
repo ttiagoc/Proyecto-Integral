@@ -24,7 +24,7 @@
         <div class="">
         <hr class="lineaReseña"style="height:1px;border-width:0;color:gray;background-color:white">
         <div class="row"> <div class="col"><p class="blanco nombre">Reseña de: @res.NombreUsuario</p></div> <div class="col"> <img src="@res.Foto" height="20px" width="auto">  </div></div>
-         <p class="blanco">@res.Contenido</p>
+           <div class="row"> <div class="col"><p class="blanco">@res.Contenido</p></div><div class="col"><p class="blanco">@res.Fecha</p></div> </div>
             
              <button class="elim"><a class="blanco delete telim" href='@Url.Action("EliminarReseñaS","Home", new {IdReseña = res.IdReseña, IdSerie = res.IdSerie})'>Eliminar</a></button>
         </div>
