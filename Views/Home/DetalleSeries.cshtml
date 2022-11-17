@@ -2,10 +2,10 @@
 @{
     ViewData["Title"] = @ViewBag.InfoSerie.Nombre;
 }
-    <div class="container pt-5">
+    <div class="container pt-5 flex-container">
       <div class="row">
          <div class="col-4"> <img src="@ViewBag.InfoSerie.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
-         <div class="col-4" >
+         <div class="col-4 flex-item-right" >
             <h1 class="">@ViewBag.InfoSerie.Nombre</h1>
             <p class="pt-3 blanco">@ViewBag.InfoSerie.Sinopsis</p> 
             <hr style="height:2px;border-width:0;color:gray;background-color:white">

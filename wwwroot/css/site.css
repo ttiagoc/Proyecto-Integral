@@ -6,12 +6,32 @@ html {
  @media (min-width: 768px) {
   html {
     font-size: 16px;
+
+  }}
+
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+      
+    }
+
+    .flex-item-right{
+      text-align: center;
+    }
+
+    .col-4,.col-6{
+      padding-top: 10px;
+      width: 400px;
+    }
+
+
   }
 
  
 
+
+
  
-} 
 
 html {
   position: relative;
@@ -778,3 +798,5 @@ option,select,.inp{
   color: #000000;
   text-decoration: none;
 }
+
+

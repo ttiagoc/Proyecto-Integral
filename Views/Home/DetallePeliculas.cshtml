@@ -5,11 +5,11 @@
 
 
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center flex-container">
     <div class="container pt-5">
-      <div class="row">
-         <div class="col-4"> <img src="@ViewBag.InfoPelicula.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
-         <div class="col-4" >
+      <div class="row flex-container">
+         <div class="col-4 flex-item-left"> <img src="@ViewBag.InfoPelicula.Foto" class="sombra" height="500px" width="auto" class="pt-5"></div>
+         <div class="col-4 flex-item-right" >
             <h1 class="">@ViewBag.InfoPelicula.Nombre</h1>
             <p class="pt-3 blanco">@ViewBag.InfoPelicula.Sinopsis</p> 
             <hr style="height:2px;border-width:0;color:gray;background-color:white">
